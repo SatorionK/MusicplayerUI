@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#2A3439</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="background">#4227395a</color>
+    <array name="gradient">
+        <item>#b5fff6</item>
+        <item>#00ffdf</item>
+        <item>#00bfa4</item>
+        <item>#007c6a</item>
+    </array>
+
+
+</resources>
