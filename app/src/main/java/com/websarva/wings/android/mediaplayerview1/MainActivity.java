@@ -1,5 +1,6 @@
 package com.websarva.wings.android.mediaplayerview1;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -50,15 +51,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 //--------------------------------------------------------------------------------------------------
-    //再生ボタンを押した際のの処理
+    //再生ボタンを押した際の処理
     public void onPlayButtonClick(View view){
         //playerが再生中の場合と違う場合
         if(player.isPlaying()){
             player.pause();
+            play_bt.setImageResource(R.drawable.ic_play);
+            play_bt.setEnabled(true);
+
+            //サービス追加（停止）
+            Intent intent = new Intent(MainActivity.this, SoundManageService.class);
+            stopService(intent);
+
+         //   play_bt.setEnabled(true);
         }
         else{
-            player.start();
+           // player.start();
+            play_bt.setImageResource(R.drawable.ic_pause_black_24dp);
+
+            //サービス追加（開始）
+            Intent intent = new Intent(MainActivity.this, SoundManageService.class);
+            startService(intent);
+
+            play_bt.setEnabled(false);
         }
+
     }
 //--------------------------------------------------------------------------------------------------
     //Mediaplayerオブジェクトの解放処理

@@ -187,6 +187,7 @@
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"
                     android:background="@color/background"
+                    android:tint="@android:color/white"
                     />
 
                 <ImageButton
